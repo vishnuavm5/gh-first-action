@@ -1,0 +1,8 @@
+name: To display the github context variable
+on: workflow_dispatch
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display github context
+        run: echo "${{toJSON(github)}}"
