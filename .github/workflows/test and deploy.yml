@@ -1,4 +1,4 @@
-name: Test code
+name: Test code and deploy
 on: workflow_dispatch
 jobs:
   test:
@@ -14,7 +14,8 @@ jobs:
         run: npm install --global mocha
       - name: Run test
         run: mocha test/add.test.js
-  deploy:
+  deploy: 
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
