@@ -1,0 +1,13 @@
+name: Target Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-event]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run a script
+        run: echo "Triggered by another repository"
